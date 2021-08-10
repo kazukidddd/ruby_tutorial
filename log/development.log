@@ -3768,3 +3768,367 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 471ms (Views: 431.2ms | ActiveRecord: 5.4ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRememberDigestToUsers (20210809114852)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210809114852"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/3" for 172.25.0.1 at 2021-08-09 13:48:47 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_rails_default.html.erb (208.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (16.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 548ms (Views: 433.7ms | ActiveRecord: 19.2ms)
+
+
+Started DELETE "/logout" for 172.25.0.1 at 2021-08-09 13:48:51 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"f0W2+U2/SMeH34F8nlL6RN+tt8TeG/xGK1jG0m7W2kM8zuCprc0cqaBH8ILqjqO0CMJN6bSSHZ6Z8x+DSMnF2g=="}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 172.25.0.1 at 2021-08-09 13:48:51 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_rails_default.html.erb (187.9ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 443ms (Views: 418.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.25.0.1 at 2021-08-09 13:48:53 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_rails_default.html.erb (152.1ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 439ms (Views: 404.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.25.0.1 at 2021-08-09 13:49:00 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q3A9PaWPKOGde0HP9HWQpuMfDUem5q8dqdzOW/uaX8I9djcowrBJYjOtRTw3iu1WFH5p5JFCOtvSS7F5JF3r7g==", "session"=>{"email"=>"kazuki@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kazuki@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$2j77kqftvBqAsTkc/iX3g.nsHqEzgOEWYL04svWUbuS/Ac0MkjEaa"], ["updated_at", "2021-08-09 13:49:00.436529"], ["id", 3]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 141ms (ActiveRecord: 20.4ms)
+
+
+Started GET "/users/3" for 172.25.0.1 at 2021-08-09 13:49:00 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_rails_default.html.erb (133.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 361ms (Views: 328.5ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/logout" for 172.25.0.1 at 2021-08-09 14:04:44 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qz7yezcNeAeykAPeQDUnlnRrK76p1uFBi7y8I6guCabotaQr138saZUIciA06X5mowTRk8NfAJk5F2VyjjEWPw=="}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.6ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2021-08-09 14:04:44.258950"], ["id", 3]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 122ms (ActiveRecord: 38.0ms)
+
+
+Started GET "/" for 172.25.0.1 at 2021-08-09 14:04:44 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (12.0ms)
+Started GET "/users/3" for 172.25.0.1 at 2021-08-09 14:04:47 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Rendered layouts/_rails_default.html.erb (3685.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 4103ms (Views: 4074.2ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_rails_default.html.erb (155.1ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 420ms (Views: 384.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/login" for 172.25.0.1 at 2021-08-09 14:04:50 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (31.7ms)
+  Rendered layouts/_rails_default.html.erb (146.9ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 441ms (Views: 404.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.25.0.1 at 2021-08-09 14:42:16 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/app/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: pa...
+    ^
+/app/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(pa...
+       ^
+/app/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '...
+      ^~~~~~
+/app/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+...emember_me] == '1' ? remember(?user) : forget(?user)
+...                              ^
+/app/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+    ^~~~
+/app/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for 172.25.0.1 at 2021-08-09 14:42:25 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_rails_default.html.erb (203.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 467ms (Views: 434.4ms)
+
+
+Started GET "/login" for 172.25.0.1 at 2021-08-09 14:42:28 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/app/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: pa...
+    ^
+/app/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(pa...
+       ^
+/app/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '...
+      ^~~~~~
+/app/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+...emember_me] == '1' ? remember(?user) : forget(?user)
+...                              ^
+/app/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+    ^~~~
+/app/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for 172.25.0.1 at 2021-08-09 14:42:29 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_rails_default.html.erb (140.6ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 419ms (Views: 378.8ms)
+
+
+Started GET "/help" for 172.25.0.1 at 2021-08-09 14:42:30 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_rails_default.html.erb (156.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 426ms (Views: 381.6ms)
+
+
+Started GET "/" for 172.25.0.1 at 2021-08-09 14:42:31 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_rails_default.html.erb (137.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 438ms (Views: 406.9ms)
+
+
+Started GET "/signup" for 172.25.0.1 at 2021-08-09 14:42:32 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (44.5ms)
+  Rendered layouts/_rails_default.html.erb (134.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 485ms (Views: 394.4ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/login" for 172.25.0.1 at 2021-08-09 14:42:35 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/app/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: pa...
+    ^
+/app/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(pa...
+       ^
+/app/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '...
+      ^~~~~~
+/app/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+...emember_me] == '1' ? remember(?user) : forget(?user)
+...                              ^
+/app/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+    ^~~~
+/app/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/login" for 172.25.0.1 at 2021-08-09 14:43:00 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_rails_default.html.erb (144.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 498ms (Views: 440.2ms)
+
+
+Started POST "/login" for 172.25.0.1 at 2021-08-09 14:43:11 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0gOogDnlmWihXDvOOrzgHu1zVqmQDZ+z/UHV+GSqVPuRiP7Q2ZfNBobESjBOYLnuOhyshPqEfmtP6gypQrVLYg==", "session"=>{"email"=>"kazuki@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kazuki@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.6ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$Mjd22DA8q56iohfjpQz.POSauG00s6rtHzFUI3JexLdy8UnQlO0/y"], ["updated_at", "2021-08-09 14:43:12.123235"], ["id", 3]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 212ms (ActiveRecord: 37.0ms)
+
+
+Started GET "/users/3" for 172.25.0.1 at 2021-08-09 14:43:12 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_rails_default.html.erb (161.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 423ms (Views: 382.5ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/logout" for 172.25.0.1 at 2021-08-09 14:43:15 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n6njMI51hvXquPRSkIqZamqJzVXoeZ2rJZkFZ6sCf0/cIrVgbgfSm80ghazkVsCaveY3eILwfHOXMtw2jR1g1g=="}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2021-08-09 14:43:15.277475"], ["id", 3]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 32.8ms)
+
+
+Started GET "/" for 172.25.0.1 at 2021-08-09 14:43:15 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_rails_default.html.erb (126.3ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 360ms (Views: 335.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.25.0.1 at 2021-08-09 14:43:16 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_rails_default.html.erb (141.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 390ms (Views: 349.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.25.0.1 at 2021-08-10 10:27:11 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (76.0ms)
+  Rendered layouts/_rails_default.html.erb (574.7ms)
+  Rendered layouts/_shim.html.erb (2.4ms)
+  Rendered layouts/_header.html.erb (8.6ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 1132ms (Views: 1058.6ms | ActiveRecord: 0.0ms)
+
+
