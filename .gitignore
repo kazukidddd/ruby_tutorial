@@ -54,3 +54,6 @@ build-iPhoneSimulator/
 
 # Used by RuboCop. Remote config files pulled in from inherit_from directive.
 # .rubocop-https?--*
+
+# アップロードされたテスト画像を無視する
+/public/uploads
